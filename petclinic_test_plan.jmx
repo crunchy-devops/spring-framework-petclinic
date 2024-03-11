@@ -6,7 +6,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="IP" elementType="Argument">
             <stringProp name="Argument.name">IP</stringProp>
-            <stringProp name="Argument.value">${__P(IP,35.195.229.150)}</stringProp>
+            <stringProp name="Argument.value">${__P(IP,170.75.167.89)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PORT" elementType="Argument">
@@ -14,14 +14,14 @@
             <stringProp name="Argument.value">${__P(PORT,30190)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="USER" elementType="Argument">
-            <stringProp name="Argument.name">USER</stringProp>
-            <stringProp name="Argument.value">${__P(USER,5)}</stringProp>
+          <elementProp name="USERS" elementType="Argument">
+            <stringProp name="Argument.name">USERS</stringProp>
+            <stringProp name="Argument.value">${__P(USERS,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="DELAY" elementType="Argument">
-            <stringProp name="Argument.name">DELAY</stringProp>
-            <stringProp name="Argument.value">${__P(DELAY,60)}</stringProp>
+          <elementProp name="RAMP_UP" elementType="Argument">
+            <stringProp name="Argument.name">RAMP_UP</stringProp>
+            <stringProp name="Argument.value">${__P(RAMP_UP,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -38,8 +38,8 @@
       </ConfigTestElement>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <stringProp name="ThreadGroup.num_threads">${USER}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">${DELAY}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${USERS}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RAMP-UP}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
