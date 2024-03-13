@@ -6,7 +6,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="IP" elementType="Argument">
             <stringProp name="Argument.name">IP</stringProp>
-            <stringProp name="Argument.value">${__P(IP,170.75.167.89)}</stringProp>
+            <stringProp name="Argument.value">${__P(IP,34.155.233.26)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PORT" elementType="Argument">
@@ -48,7 +48,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Landing Page"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/petclinic/landing_page">
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -93,7 +93,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Find"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/petclinic/owners/find">
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -142,7 +142,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/petclinic/owners/new">
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -191,7 +191,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/petclinic/owners/new-post">
             <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
