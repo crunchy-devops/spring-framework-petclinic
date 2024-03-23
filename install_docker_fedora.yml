@@ -1,0 +1,6 @@
+---
+- name: Install docker on remote
+  hosts: all , !local
+  become: true
+  roles:
+    - { role: role.docker }

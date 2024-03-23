@@ -1,0 +1,26 @@
+---
+# tasks for role.docker
+- name: Install require packages
+  become: true
+  dnf: name={{item}} state=present update_cache=yes
+  with_items:
+    - dnf-plugins-core
+- name: Add docker repo
+  command: dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  changed_when: false
+- name: Add docker-ce
+  dnf: name={{item}} state=present update_cache=yes
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-buildx-plugin
+    - docker-compose-plugin
+- name: service docker start
+  service: name=docker state=started enabled=yes
+- name:  install monitoring
+  dnf: name={{item}} state=present update_cache=yes
+  with_items:
+    - htop
+    - iotop
+    - iftop
