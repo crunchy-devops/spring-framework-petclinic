@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        // Install the Maven  version configured as "Maven3.9.12" and add it to the path.
+        //   the Maven  version configured as "Maven3.9.12" and add it to the path.
         maven "Maven3.9.12"
         jdk 'Corretto-17'
     }
