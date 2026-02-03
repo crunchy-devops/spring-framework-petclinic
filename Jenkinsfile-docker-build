@@ -23,8 +23,8 @@ pipeline {
             steps {
                 script {
                     // Build the image
-                    //def app = docker.build("${DOCKER_IMAGE}:${VERSION}")
-                    sh "docker build -t ${DOCKER_IMAGE}:${VERSION}  ."
+                    sh "docker build -t ${DOCKER_IMAGE}:${VERSION} ."
+
                     // Check if container exists and remove it if it does
                     sh """
                         if [ "\$(docker ps -aq -f name=${CONTAINER_NAME})" ]; then
@@ -33,24 +33,8 @@ pipeline {
                     """
 
                     // Run the new container
-                    sh "docker run --name ${CONTAINER_NAME} -p 30080:8080 ${DOCKER_IMAGE}:${VERSION}"
-                    //app.run("--name ${CONTAINER_NAME} -p 30080:8080")
+                    sh "docker run -d --name ${CONTAINER_NAME} -p 30080:8080 ${DOCKER_IMAGE}:${VERSION}"
                 }
-            }
-        }
-    }
-    post {
-        success {
-            script {
-                // Notify GitHub of success
-                // This assumes the GitHub plugin is installed
-                //githubNotify description: 'Docker Build Succeeded', status: 'SUCCESS', context: 'jenkins/docker-build'
-            }
-        }
-        failure {
-            script {
-                // Notify GitHub of failure
-                //githubNotify description: 'Docker Build Failed', status: 'FAILURE', context: 'jenkins/docker-build'
             }
         }
     }
