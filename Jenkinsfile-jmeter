@@ -22,6 +22,7 @@ pipeline {
        useProjectRule: false,
        failBuildOnError: false,
        unstableOnWarning: true
+       )
     }
   }
 }
