@@ -33,7 +33,8 @@ pipeline {
                     """
 
                     // Run the new container
-                    app.run("--name ${CONTAINER_NAME} -p 30080:8080")
+                    sh "docker run --name ${CONTAINER_NAME} -p 30080:8080 ${DOCKER_IMAGE}:${VERSION}"
+                    //app.run("--name ${CONTAINER_NAME} -p 30080:8080")
                 }
             }
         }
@@ -43,13 +44,13 @@ pipeline {
             script {
                 // Notify GitHub of success
                 // This assumes the GitHub plugin is installed
-                githubNotify description: 'Docker Build Succeeded', status: 'SUCCESS', context: 'jenkins/docker-build'
+                //githubNotify description: 'Docker Build Succeeded', status: 'SUCCESS', context: 'jenkins/docker-build'
             }
         }
         failure {
             script {
                 // Notify GitHub of failure
-                githubNotify description: 'Docker Build Failed', status: 'FAILURE', context: 'jenkins/docker-build'
+                //githubNotify description: 'Docker Build Failed', status: 'FAILURE', context: 'jenkins/docker-build'
             }
         }
     }
